@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>下載 PromptBox — Windows / macOS</title>
+  <meta name="description" content="免費下載 PromptBox v3.2.3，支援 Windows 10/11 與 macOS 10.15+。提供安裝版與免安裝便攜版。">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("pb-theme");
+        if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.classList.add("dark");
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳至主要內容</a>
+
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="index.html" aria-label="PromptBox 首頁">
+        <span class="logo-mark" aria-hidden="true">📦</span>
+        <span>PromptBox</span>
+      </a>
+      <nav aria-label="主導覽">
+        <ul class="nav-links">
+          <li><a href="index.html">首頁</a></li>
+          <li><a href="download.html" aria-current="page">下載</a></li>
+          <li><a href="pricing.html">購買</a></li>
+          <li><a href="docs.html">操作手冊</a></li>
+          <li><a href="changelog.html">更新日誌</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button" aria-label="切換日夜間模式">
+          <span class="material-symbols-outlined icon-light">dark_mode</span>
+          <span class="material-symbols-outlined icon-dark">light_mode</span>
+        </button>
+        <a class="btn btn-primary btn-nav-cta" href="https://github.com/tsa206531/PromptBox/releases">
+          <span class="material-symbols-outlined">download</span>下載
+        </a>
+        <button class="nav-burger" type="button" aria-label="開啟選單" aria-expanded="false">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- 下載首屏：OS 偵測一鍵下載 -->
+    <section class="dl-hero">
+      <div class="container">
+        <span class="version-badge"><span class="material-symbols-outlined" style="font-size:14px" aria-hidden="true">new_releases</span>最新版本 v3.2.3</span>
+        <h1>下載 PromptBox</h1>
+        <p>免費開始使用。所有安裝檔均發布於 GitHub Releases。</p>
+        <a class="btn btn-primary btn-lg" data-os-cta href="https://github.com/tsa206531/PromptBox/releases">
+          <span class="material-symbols-outlined">download</span>
+          <span data-os-label>免費下載</span>
+        </a>
+        <p style="margin-top:12px;font-size:12px;color:rgb(var(--color-text-secondary))" data-os-note>支援 Windows 10/11 與 macOS 10.15+</p>
+      </div>
+    </section>
+
+    <!-- 平台卡片 -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="dl-platforms">
+          <div class="card dl-card reveal" data-platform="win">
+            <div class="dl-os"><span class="material-symbols-outlined" aria-hidden="true">desktop_windows</span>Windows</div>
+            <p class="dl-req">Windows 10 / 11（64 位元）</p>
+            <ul style="list-style:none;display:grid;gap:8px;font-size:14px;color:rgb(var(--color-text-secondary))">
+              <li>・安裝版（<code style="font-family:var(--font-mono);font-size:12px">.exe</code>）— 支援自訂安裝路徑</li>
+              <li>・免安裝便攜版（<code style="font-family:var(--font-mono);font-size:12px">.zip</code>）— 解壓即用</li>
+            </ul>
+            <div class="dl-actions">
+              <a class="btn btn-primary" href="https://github.com/tsa206531/PromptBox/releases" target="_blank" rel="noopener">
+                <span class="material-symbols-outlined">download</span>前往下載
+              </a>
+            </div>
+          </div>
+          <div class="card dl-card reveal" data-platform="mac">
+            <div class="dl-os"><span class="material-symbols-outlined" aria-hidden="true">laptop_mac</span>macOS</div>
+            <p class="dl-req">macOS 10.15（Catalina）以上</p>
+            <ul style="list-style:none;display:grid;gap:8px;font-size:14px;color:rgb(var(--color-text-secondary))">
+              <li>・macOS 安裝映像檔</li>
+              <li>・金鑰由 macOS Keychain 保護</li>
+            </ul>
+            <div class="dl-actions">
+              <a class="btn btn-primary" href="https://github.com/tsa206531/PromptBox/releases" target="_blank" rel="noopener">
+                <span class="material-symbols-outlined">download</span>前往下載
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 步驟：縮短「啊哈時刻」距離 -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="overline">Get Started</span>
+          <h2>3 步驟，1 分鐘開始</h2>
+        </div>
+        <div class="steps">
+          <div class="card step-card reveal">
+            <div class="step-num" aria-hidden="true">1</div>
+            <h3>下載並安裝</h3>
+            <p>從 GitHub Releases 下載對應平台的安裝檔，依精靈指示完成安裝（Windows 可自選安裝路徑）。</p>
+          </div>
+          <div class="card step-card reveal">
+            <div class="step-num" aria-hidden="true">2</div>
+            <h3>首次啟動</h3>
+            <p>App 會自動建立加密資料庫並載入「教學資料夾」，跟著範例卡片認識介面，不怕弄壞資料。</p>
+          </div>
+          <div class="card step-card reveal">
+            <div class="step-num" aria-hidden="true">3</div>
+            <h3>複製第一條 Prompt</h3>
+            <p>新增一張卡片、點一下複製按鈕，貼進 ChatGPT / Claude——你已經完成第一次效率升級。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 安裝提示 -->
+    <section class="section" style="padding-top:0">
+      <div class="container" style="max-width:760px">
+        <div class="section-head reveal">
+          <span class="overline">Notes</span>
+          <h2>安裝小提示</h2>
+        </div>
+        <div class="reveal">
+          <div class="notice notice-info">
+            <span class="material-symbols-outlined" aria-hidden="true">update</span>
+            <p><strong>更新方式：</strong>v3.0 起採手動更新。App 啟動時偵測到新版本會提示你前往下載頁，不會無聲自動安裝，你的資料由你掌控。</p>
+          </div>
+          <div class="notice notice-info">
+            <span class="material-symbols-outlined" aria-hidden="true">lock</span>
+            <p><strong>資料加密：</strong>首次啟動會建立 SQLCipher 加密資料庫，金鑰由作業系統的 Keychain（Windows DPAPI / macOS Keychain）保護，不落明文。</p>
+          </div>
+          <div class="notice notice-warning">
+            <span class="material-symbols-outlined" aria-hidden="true">warning</span>
+            <p><strong>從 v2.x 升級：</strong>首次啟動 v3 會將舊的明文資料庫備份為 <code style="font-family:var(--font-mono);font-size:12px">promptbox.db.plain.bak</code> 並建立全新加密資料庫，舊資料不會自動遷移，可從備份手動匯入。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a class="brand" href="index.html"><span class="logo-mark" aria-hidden="true">📦</span><span>PromptBox</span></a>
+      <ul class="footer-links">
+        <li><a href="download.html">下載</a></li>
+        <li><a href="pricing.html">購買</a></li>
+        <li><a href="docs.html">操作手冊</a></li>
+        <li><a href="changelog.html">更新日誌</a></li>
+        <li><a href="https://github.com/tsa206531/PromptBox" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="mailto:test1234@google.com">聯絡我們</a></li>
+      </ul>
+      <div class="copyright">
+        <span>© 2026 PromptBox. All rights reserved.</span>
+        <span>本地儲存 ・ 加密保護 ・ 你的 Prompt 只屬於你</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

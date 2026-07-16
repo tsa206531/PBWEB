@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PromptBox — 解放腦力，你的專屬 AI 提示詞大腦</title>
+  <meta name="description" content="PromptBox 是本地端 AI Prompt 管理工具：樹狀分類、一鍵複製、全局搜尋、機密保險庫與 MCP 整合，讓 ChatGPT / Claude / Gemini 的使用效率翻倍。">
+  <script>
+    /* 先於 CSS 套用主題，避免 FOUC */
+    (function () {
+      try {
+        var t = localStorage.getItem("pb-theme");
+        if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.classList.add("dark");
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳至主要內容</a>
+
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="index.html" aria-label="PromptBox 首頁">
+        <span class="logo-mark" aria-hidden="true">📦</span>
+        <span>PromptBox</span>
+      </a>
+      <nav aria-label="主導覽">
+        <ul class="nav-links">
+          <li><a href="index.html" aria-current="page">首頁</a></li>
+          <li><a href="download.html">下載</a></li>
+          <li><a href="pricing.html">購買</a></li>
+          <li><a href="docs.html">操作手冊</a></li>
+          <li><a href="changelog.html">更新日誌</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button" aria-label="切換日夜間模式">
+          <span class="material-symbols-outlined icon-light">dark_mode</span>
+          <span class="material-symbols-outlined icon-dark">light_mode</span>
+        </button>
+        <a class="btn btn-primary btn-nav-cta" href="download.html">
+          <span class="material-symbols-outlined">download</span>下載
+        </a>
+        <button class="nav-burger" type="button" aria-label="開啟選單" aria-expanded="false">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero：3 秒內傳達「這是什麼、對我有什麼好處」 -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow"><span class="material-symbols-outlined" style="font-size:14px" aria-hidden="true">bolt</span>本地端 AI Prompt 管理工具</span>
+          <h1>解放腦力，<br>你的專屬 <span class="accent">AI 提示詞大腦</span></h1>
+          <p class="sub">把常用 Prompt 分類收好、一鍵複製即用，讓 ChatGPT / Claude / Gemini 的使用效率翻倍。資料全存在你自己的電腦，加密保護、離線可用。</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary btn-lg" data-os-cta href="https://github.com/tsa206531/PromptBox/releases">
+              <span class="material-symbols-outlined">download</span>
+              <span data-os-label>免費下載</span>
+            </a>
+            <a class="btn btn-secondary btn-lg" href="docs.html">
+              <span class="material-symbols-outlined">menu_book</span>查看操作手冊
+            </a>
+            <p class="cta-note" data-os-note>支援 Windows 10/11 與 macOS 10.15+</p>
+          </div>
+        </div>
+        <div class="hero-shot reveal">
+          <img src="assets/01.jpg" alt="PromptBox 主畫面：左側資料夾樹狀分類，右側 Prompt 卡片牆" width="1280" height="800" loading="eager">
+        </div>
+      </div>
+    </section>
+
+    <!-- Features：四大痛點亮點 -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="overline">Features</span>
+          <h2>每天和 AI 對話的你，值得更好的工作流</h2>
+          <p>重複輸入類似提示詞、翻聊天紀錄找上次的神 Prompt——這些時間都可以省下來。</p>
+        </div>
+        <div class="feature-grid">
+          <div class="card feature-card reveal">
+            <div class="feature-icon" aria-hidden="true">🧠</div>
+            <h3>告別決策疲勞</h3>
+            <p>樹狀資料夾 + 標籤分類管理，Prompt 各就各位，不需每次重新思考怎麼下指令。</p>
+          </div>
+          <div class="card feature-card reveal">
+            <div class="feature-icon" aria-hidden="true">⚡</div>
+            <h3>一鍵複製</h3>
+            <p>從「選取、右鍵、複製」3 步驟縮減為 1 步驟，點一下即進剪貼簿，貼上就能用。</p>
+          </div>
+          <div class="card feature-card reveal">
+            <div class="feature-icon" aria-hidden="true">🔍</div>
+            <h3>關鍵字直達</h3>
+            <p>標題、內容、標籤全局搜尋。就算 Prompt 累積破百條，也能秒找到要的那一條。</p>
+          </div>
+          <div class="card feature-card reveal">
+            <div class="feature-icon" aria-hidden="true">📖</div>
+            <h3>無痛上手</h3>
+            <p>內建教學資料夾與防呆機制，跟著範例卡片操作即可上手，不污染你的真實資料。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- v3 進階亮點（截圖穿插展示） -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="overline">Advanced</span>
+          <h2>不只是收納盒，更是機密 Context 保險庫</h2>
+          <p>v3 起，PromptBox 升級為「人類策展、AI 安全取用」的本地保險庫。</p>
+        </div>
+
+        <div class="showcase reveal">
+          <div class="showcase-text">
+            <h3>🎨 變數樣板，一份 Prompt 重複用</h3>
+            <p>在內容中寫下 <code>{{變數}}</code>，複製前填入當次的值，同一份樣板適用不同情境；還能用 <code>{{@prompt:N}}</code> 把多張卡片串聯成組合技。</p>
+            <ul>
+              <li><span class="material-symbols-outlined">check_circle</span>動態變數替換，複製時自動代入</li>
+              <li><span class="material-symbols-outlined">check_circle</span>卡片串聯遞迴展開，即時預覽結果</li>
+              <li><span class="material-symbols-outlined">check_circle</span>Markdown 預覽，長 Prompt 也好讀</li>
+            </ul>
+          </div>
+          <div class="showcase-img"><img src="assets/02.jpg" alt="PromptBox 變數樣板與填值面板畫面" loading="lazy"></div>
+        </div>
+
+        <div class="showcase reverse reveal">
+          <div class="showcase-text">
+            <h3>🔐 機密卡片，AI 拿不走你的秘密</h3>
+            <p>資料庫整庫靜態加密（SQLCipher + OS Keychain），機密卡片再加一層自訂密碼的 AES-256-GCM 卡片級加密——沒有你的授權，AI 永遠讀不到。</p>
+            <ul>
+              <li><span class="material-symbols-outlined">check_circle</span>卡片一鍵鎖定，對 AI 完全隱藏</li>
+              <li><span class="material-symbols-outlined">check_circle</span>機密釋放需當次授權，解一次、餵一次、不快取</li>
+              <li><span class="material-symbols-outlined">check_circle</span>每次釋放寫入稽核紀錄，全程可追溯</li>
+            </ul>
+          </div>
+          <div class="showcase-img"><img src="assets/03.jpg" alt="PromptBox 機密卡片與密碼解鎖畫面" loading="lazy"></div>
+        </div>
+
+        <div class="showcase reveal">
+          <div class="showcase-text">
+            <h3>🔌 MCP 整合，IDE 直接取用你的 Prompt</h3>
+            <p>內建 MCP 伺服器，Cursor、VS Code、Claude Desktop 等工具可直接把你的 Prompt 當作 Tool 呼叫，帶參數編譯回傳純淨字串，省 Token 又精準。</p>
+            <ul>
+              <li><span class="material-symbols-outlined">check_circle</span>每張卡片自動變成 MCP Tool</li>
+              <li><span class="material-symbols-outlined">check_circle</span>具名多 Token 管理，可個別撤銷</li>
+              <li><span class="material-symbols-outlined">check_circle</span>System Tray 常駐，關窗服務不中斷</li>
+            </ul>
+          </div>
+          <div class="showcase-img"><img src="assets/04.jpg" alt="PromptBox MCP 設定面板畫面" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="section" id="cases" style="padding-top:0">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="overline">Use Cases</span>
+          <h2>不管你是誰，都有一套現成打法</h2>
+        </div>
+        <div class="reveal">
+          <div class="tabs" role="tablist" aria-label="適用情境">
+            <button class="tab-btn" role="tab" aria-selected="true" aria-controls="tab-dev" id="tabbtn-dev" type="button">👨‍💻 工程師</button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-creator" id="tabbtn-creator" type="button">✍️ 創作者 / 行銷</button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-pm" id="tabbtn-pm" type="button">📋 PM / 設計師</button>
+          </div>
+          <div class="tab-panel active" id="tab-dev" role="tabpanel" aria-labelledby="tabbtn-dev">
+            <div class="card usecase-card">
+              <h4><span class="material-symbols-outlined">rate_review</span>Code Review 模版</h4>
+              <p>固定的審查清單 Prompt，貼上 diff 就能產出一致水準的 review 意見，還可用 <code>{{語言}}</code> 變數切換技術棧。</p>
+            </div>
+            <div class="card usecase-card">
+              <h4><span class="material-symbols-outlined">build</span>重構指令</h4>
+              <p>「保持行為不變、拆出純函式、補測試」等重構口令收成一張卡，一鍵複製即開工。</p>
+            </div>
+            <div class="card usecase-card">
+              <h4><span class="material-symbols-outlined">science</span>單元測試自動生成</h4>
+              <p>把團隊的測試風格寫進樣板（框架、命名、AAA 結構），讓 AI 生出來的測試不用重改。</p>
+            </div>
+          </div>
+          <div class="tab-panel" id="tab-creator" role="tabpanel" aria-labelledby="tabbtn-creator">
+            <div class="card usecase-card">
+              <h4><span class="material-symbols-outlined">travel_explore</span>SEO 撰寫框架</h4>
+              <p>關鍵字研究、標題公式、meta 描述等 SEO 流程 Prompt 全部收好，用 <code>{{主題}}</code> 換題目重複使用。</p>
+            </div>
+            <div class="card usecase-card">
+              <h4><span class="material-symbols-outlined">format_list_bulleted</span>文章大綱生成</h4>
+              <p>固定的大綱生成器：目標讀者、口吻、字數一次設好，每篇文章都從高品質骨架開始。</p>
+            </div>
+            <div class="card usecase-card">
+              <h4><span class="material-symbols-outlined">campaign</span>多平台改寫</h4>
+              <p>同一篇內容改寫成 FB / IG / 電子報版本的指令組，用卡片串聯一次輸出全通路文案。</p>
+            </div>
+          </div>
+          <div class="tab-panel" id="tab-pm" role="tabpanel" aria-labelledby="tabbtn-pm">
+            <div class="card usecase-card">
+              <h4><span class="material-symbols-outlined">description</span>需求規格書轉換</h4>
+              <p>把口頭需求、會議記錄餵給固定的 PRD 轉換 Prompt，輸出結構一致的規格文件。</p>
+            </div>
+            <div class="card usecase-card">
+              <h4><span class="material-symbols-outlined">design_services</span>介面設計反饋</h4>
+              <p>設計評論清單 Prompt（可用性、一致性、動線），貼上截圖就能獲得系統化 review。</p>
+            </div>
+            <div class="card usecase-card">
+              <h4><span class="material-symbols-outlined">groups</span>利害關係人溝通</h4>
+              <p>對工程、對老闆、對客戶的三種說法樣板，同一件事快速產出三種版本的溝通稿。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="bottom-cta">
+      <div class="container reveal">
+        <h2>今天就開始提升你的 AI 生產力</h2>
+        <p>免費下載，30 秒完成安裝。核心功能永久免費。</p>
+        <a class="btn btn-primary btn-lg" data-os-cta href="https://github.com/tsa206531/PromptBox/releases">
+          <span class="material-symbols-outlined">download</span>
+          <span data-os-label>免費下載</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a class="brand" href="index.html"><span class="logo-mark" aria-hidden="true">📦</span><span>PromptBox</span></a>
+      <ul class="footer-links">
+        <li><a href="download.html">下載</a></li>
+        <li><a href="pricing.html">購買</a></li>
+        <li><a href="docs.html">操作手冊</a></li>
+        <li><a href="changelog.html">更新日誌</a></li>
+        <li><a href="https://github.com/tsa206531/PromptBox" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="mailto:test1234@google.com">聯絡我們</a></li>
+      </ul>
+      <div class="copyright">
+        <span>© 2026 PromptBox. All rights reserved.</span>
+        <span>本地儲存 ・ 加密保護 ・ 你的 Prompt 只屬於你</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

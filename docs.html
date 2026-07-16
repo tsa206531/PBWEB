@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PromptBox 操作手冊</title>
+  <meta name="description" content="PromptBox 使用教學：快速開始、卡片管理、資料夾與標籤、變數樣板、機密卡片、卡片串聯、MCP 整合與疑難排解。">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("pb-theme");
+        if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.classList.add("dark");
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳至主要內容</a>
+
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="index.html" aria-label="PromptBox 首頁">
+        <span class="logo-mark" aria-hidden="true">📦</span>
+        <span>PromptBox</span>
+      </a>
+      <nav aria-label="主導覽">
+        <ul class="nav-links">
+          <li><a href="index.html">首頁</a></li>
+          <li><a href="download.html">下載</a></li>
+          <li><a href="pricing.html">購買</a></li>
+          <li><a href="docs.html" aria-current="page">操作手冊</a></li>
+          <li><a href="changelog.html">更新日誌</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button" aria-label="切換日夜間模式">
+          <span class="material-symbols-outlined icon-light">dark_mode</span>
+          <span class="material-symbols-outlined icon-dark">light_mode</span>
+        </button>
+        <a class="btn btn-primary btn-nav-cta" href="download.html">
+          <span class="material-symbols-outlined">download</span>下載
+        </a>
+        <button class="nav-burger" type="button" aria-label="開啟選單" aria-expanded="false">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container docs-layout">
+      <!-- 側欄目錄 -->
+      <aside class="docs-sidebar">
+        <div>
+          <div class="docs-group-title">操作手冊</div>
+          <nav aria-label="手冊目錄">
+            <ul>
+              <li><a href="#getting-started" class="active"><span class="material-symbols-outlined" aria-hidden="true">rocket_launch</span>快速開始</a></li>
+              <li><a href="#basics"><span class="material-symbols-outlined" aria-hidden="true">style</span>基本操作</a></li>
+              <li><a href="#organize"><span class="material-symbols-outlined" aria-hidden="true">folder</span>資料夾與標籤</a></li>
+              <li><a href="#variables"><span class="material-symbols-outlined" aria-hidden="true">data_object</span>變數樣板</a></li>
+              <li><a href="#secrets"><span class="material-symbols-outlined" aria-hidden="true">lock</span>機密卡片與資料鎖</a></li>
+              <li><a href="#chaining"><span class="material-symbols-outlined" aria-hidden="true">link</span>卡片串聯</a></li>
+              <li><a href="#mcp"><span class="material-symbols-outlined" aria-hidden="true">extension</span>MCP 整合</a></li>
+              <li><a href="#settings"><span class="material-symbols-outlined" aria-hidden="true">settings</span>設定與疑難排解</a></li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 內容 -->
+      <div class="docs-content">
+        <h1>操作手冊</h1>
+        <p class="docs-lead">從安裝到進階的機密保險庫與 MCP 整合，這份手冊帶你把 PromptBox 用到淋漓盡致。</p>
+
+        <section id="getting-started">
+          <h2><span class="material-symbols-outlined" aria-hidden="true">rocket_launch</span>快速開始</h2>
+          <h3>安裝</h3>
+          <ol>
+            <li>前往 <a href="download.html">下載頁</a> 取得對應平台的安裝檔（Windows 提供安裝版與免安裝便攜版）。</li>
+            <li>執行安裝精靈。Windows 版可自訂安裝磁碟與資料夾。</li>
+            <li>啟動 PromptBox。</li>
+          </ol>
+          <h3>首次啟動</h3>
+          <p>第一次開啟時，App 會自動完成兩件事：</p>
+          <ul>
+            <li><strong>建立加密資料庫</strong>：所有資料以 SQLCipher 靜態加密儲存在你的電腦，金鑰由作業系統的 Keychain 保護。</li>
+            <li><strong>載入教學資料夾</strong>：側欄會出現內建的教學卡片，跟著範例操作即可熟悉介面——教學內容與你的真實資料隔離，怎麼玩都不怕弄壞。</li>
+          </ul>
+          <div class="notice notice-info">
+            <span class="material-symbols-outlined" aria-hidden="true">lightbulb</span>
+            <p><strong>建議的第一步：</strong>新增一張你最常用的 Prompt 卡片，點複製按鈕貼到 ChatGPT / Claude 用一次。感受到「1 秒取用」之後，再慢慢把其他 Prompt 搬進來。</p>
+          </div>
+        </section>
+
+        <section id="basics">
+          <h2><span class="material-symbols-outlined" aria-hidden="true">style</span>基本操作</h2>
+          <h3>新增卡片</h3>
+          <ol>
+            <li>點擊主畫面的「新增 Prompt」按鈕。</li>
+            <li>填寫 <strong>標題</strong>、<strong>內容</strong>（支援 Markdown），並可加上 <strong>說明</strong>、<strong>標籤</strong>、選擇 <strong>資料夾</strong>。</li>
+            <li>儲存後卡片會出現在卡片牆上，左下角顯示 <code>#id</code> 編號（方便在 MCP 或回報問題時引用）。</li>
+          </ol>
+          <h3>一鍵複製</h3>
+          <p>每張卡片右下角都有複製按鈕，點一下即把完整內容送進剪貼簿，圖示會短暫變成 ✓ 表示成功。這就是 PromptBox 最核心的動作：<strong>找到卡片 → 點一下 → 貼上就用</strong>。</p>
+          <h3>搜尋</h3>
+          <p>頂部搜尋框可同時比對 <strong>標題、內容、標籤</strong>。Prompt 破百條之後，搜尋是最快的入口。</p>
+          <h3>我的最愛</h3>
+          <p>點卡片上的 ⭐ 星號把常用 Prompt 加入「我的最愛」，側欄可一鍵過濾。</p>
+          <h3>檢視模式</h3>
+          <p>右上角可切換 <strong>網格檢視</strong>（預設）與 <strong>列表檢視</strong>；Markdown 內容可切換編輯 / 預覽分頁。</p>
+        </section>
+
+        <section id="organize">
+          <h2><span class="material-symbols-outlined" aria-hidden="true">folder</span>資料夾與標籤</h2>
+          <h3>資料夾</h3>
+          <ul>
+            <li>在側欄「資料夾」區點「+」新增資料夾，把不同用途的 Prompt 分開收納（例如：Code Review、行銷文案、會議記錄）。</li>
+            <li>資料夾可重新命名、刪除；刪除前會跳出確認對話框防止誤刪。</li>
+            <li>免費版最多可建立 <strong>5 個資料夾</strong>，個人版無上限。</li>
+          </ul>
+          <h3>標籤</h3>
+          <ul>
+            <li>每張卡片可掛多個標籤，側欄的標籤區支援 <strong>多選過濾</strong>（同時選多個標籤縮小範圍）。</li>
+            <li>選了一堆標籤想重來？點標籤區的「重設」按鈕一鍵清空。</li>
+          </ul>
+          <div class="notice notice-info">
+            <span class="material-symbols-outlined" aria-hidden="true">lightbulb</span>
+            <p><strong>分類心法：</strong>資料夾放「用途」（專案、場景），標籤放「屬性」（語言、模型、口吻）。一張卡片只能在一個資料夾，但可以有多個標籤。</p>
+          </div>
+        </section>
+
+        <section id="variables">
+          <h2><span class="material-symbols-outlined" aria-hidden="true">data_object</span>變數樣板</h2>
+          <p>變數樣板讓一份 Prompt 適用無限情境。在內容中以雙大括號宣告變數：</p>
+          <pre><code>請扮演資深 {{角色}}，用 {{語氣}} 的口吻，
+針對以下主題寫一篇 {{字數}} 字的文章大綱：
+
+主題：{{主題}}</code></pre>
+          <h3>使用方式</h3>
+          <ol>
+            <li>儲存卡片後，右側會出現 <strong>變數面板</strong>，自動列出內容中的所有 <code>{{變數}}</code>。</li>
+            <li>在面板填入當次的值（可為每個變數設定預設值）。</li>
+            <li>點複製時，變數會自動代入你填的值；沒填的變數保留 <code>{{佔位符}}</code> 原樣。</li>
+          </ol>
+          <h3>強型別設定（進階）</h3>
+          <p>變數預設為字串型別。開啟強型別模式後，可為每個變數指定型別（數字、布林、列舉等），在 MCP 整合時讓 AI 帶入的參數受到 JSON Schema 驗證。</p>
+          <p>編輯內容時若刪掉了某個 <code>{{變數}}</code>，儲存時 App 會自動清掉對應的孤立變數值，不需手動整理。</p>
+        </section>
+
+        <section id="secrets">
+          <h2><span class="material-symbols-outlined" aria-hidden="true">lock</span>機密卡片與資料鎖</h2>
+          <p>PromptBox 提供兩層保護，讓含有機密內容（API Key、內部規範、個資範本）的卡片安全存放：</p>
+          <table>
+            <thead>
+              <tr><th>機制</th><th>作用</th><th>適合放什麼</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>資料鎖 🔒</strong></td><td>一鍵鎖定，卡片對 AI（MCP）完全隱藏，GUI 仍可直接查看</td><td>不想被 AI 讀到、但自己常看的內容</td></tr>
+              <tr><td><strong>機密卡片 🔐</strong></td><td>以自訂密碼做卡片級 AES-256 加密，GUI 也要輸入密碼才能查看</td><td>API Key、密碼、真正的機密</td></tr>
+            </tbody>
+          </table>
+          <h3>建立機密卡片</h3>
+          <ol>
+            <li>編輯卡片時開啟「機密」選項，設定一組自訂密碼。</li>
+            <li>之後查看這張卡片都需要輸入密碼解鎖；所有密碼欄位都有 👁️ 顯示/隱藏切換，輸入前可先確認沒打錯。</li>
+            <li>解鎖後變數面板照常可用：解析 <code>{{變數}}</code>、填值、複製代入一氣呵成。</li>
+          </ol>
+          <div class="notice notice-danger">
+            <span class="material-symbols-outlined" aria-hidden="true">report</span>
+            <p><strong>忘記密碼將永久無法復原內容。</strong>密碼不會被儲存在任何地方，也沒有後門或重設機制。設定前請務必確認自己記得住這組密碼。</p>
+          </div>
+          <h3>機密釋放（Consent）</h3>
+          <p>預設情況下 AI 永遠讀不到機密卡片。若你希望特定機密卡片可以「在你授權下」餵給 AI，可設定釋放策略：</p>
+          <ul>
+            <li><code>never</code>（預設）：永不釋放，AI 完全看不到這張卡的存在。</li>
+            <li><code>once</code>：AI 每次請求都需要你輸入密碼授權，用完即棄。</li>
+            <li><code>session</code>：授權一次，本次 App 執行期間有效。</li>
+          </ul>
+          <p>每次釋放（允許 / 拒絕 / 逾時）都會寫入<strong>釋放稽核紀錄</strong>，可在 MCP 面板檢視，全程可追溯。</p>
+        </section>
+
+        <section id="chaining">
+          <h2><span class="material-symbols-outlined" aria-hidden="true">link</span>卡片串聯</h2>
+          <p>把多張卡片組合成一份大 Prompt。在側欄的內建<strong>「串聯資料夾」</strong>中建立組合卡，用以下語法引用其他卡片：</p>
+          <pre><code>{{@prompt:12}}   ← 引用 #12 卡片的內容
+
+再加上這段自己的補充說明，
+{{@prompt:34}}   ← 再引用 #34</code></pre>
+          <h3>運作規則</h3>
+          <ul>
+            <li>引用支援<strong>遞迴展開</strong>（被引用的卡片裡還可以再引用別張），深度上限 5 層，並自動偵測循環引用。</li>
+            <li>輸入時<strong>即時展開預覽</strong>，Preview 分頁顯示「展開 + 填值後」的最終結果。</li>
+            <li>被引用卡片的變數會<strong>取聯集</strong>出現在組合卡的變數面板；已填的值自動帶入當預設，同名不同值的衝突會留空並標示提醒。</li>
+            <li><strong>鎖定卡與機密卡無法被串聯引用</strong>——機密不會經由串聯間接洩漏。</li>
+            <li>組合卡永遠只儲存 <code>{{@prompt:N}}</code> 原始 token，展開結果不寫回內容。</li>
+          </ul>
+        </section>
+
+        <section id="mcp">
+          <h2><span class="material-symbols-outlined" aria-hidden="true">extension</span>MCP 整合</h2>
+          <p>PromptBox 內建 <strong>MCP（Model Context Protocol）伺服器</strong>，讓 Cursor、VS Code、Claude Desktop 等工具直接取用你的 Prompt 資產——每張未鎖定的卡片都自動成為一個可呼叫的 Tool。</p>
+          <h3>啟動伺服器</h3>
+          <ol>
+            <li>點擊側欄的 <strong>MCP 設定</strong> 按鈕開啟面板。</li>
+            <li>啟動伺服器（僅監聽本機 <code>127.0.0.1</code>，不對外開放）。</li>
+            <li>建立一組 <strong>具名 Token</strong>（可建多組、可個別撤銷，每組限速 60 req/min）。</li>
+            <li>點「產生 IDE 設定」複製現成的設定 JSON。</li>
+          </ol>
+          <h3>IDE 設定範例</h3>
+          <pre><code>{
+  "mcpServers": {
+    "promptbox": {
+      "url": "http://127.0.0.1:&lt;port&gt;/mcp",
+      "headers": {
+        "Authorization": "Bearer &lt;你的Token&gt;"
+      }
+    }
+  }
+}</code></pre>
+          <p>支援 Streamable HTTP（<code>/mcp</code>）與 legacy SSE 兩種傳輸方式。連線後，AI 可以：</p>
+          <ul>
+            <li>列出並呼叫你的 Prompt Tool（<code>prompt_{id}</code>），帶入變數參數，取得編譯後的純淨字串——比整段貼上省 Token。</li>
+            <li>缺少必填變數時收到明確的引導訊息，會回頭向你要參數。</li>
+            <li>你新增 / 編輯 / 鎖定卡片時，IDE 端的 Tool 列表即時刷新。</li>
+          </ul>
+          <div class="notice notice-info">
+            <span class="material-symbols-outlined" aria-hidden="true">visibility_off</span>
+            <p><strong>隱私邊界：</strong>鎖定卡片（🔒）與未授權的機密卡片（🔐）對 MCP 完全隱藏——AI 不僅讀不到內容，連卡片的存在都看不到。</p>
+          </div>
+          <h3>System Tray 常駐</h3>
+          <p>關閉主視窗後 App 會縮小到系統匣繼續運行，MCP 服務不中斷；要完全退出請在系統匣圖示上按右鍵選擇結束。</p>
+        </section>
+
+        <section id="settings">
+          <h2><span class="material-symbols-outlined" aria-hidden="true">settings</span>設定與疑難排解</h2>
+          <h3>主題與語言</h3>
+          <ul>
+            <li><strong>深色 / 淺色模式</strong>：點頂部的主題切換按鈕，或跟隨系統設定自動切換。</li>
+            <li><strong>介面語言</strong>：支援繁體中文、English、日本語，可在設定頁切換。</li>
+          </ul>
+          <h3>更新版本</h3>
+          <p>App 啟動時會自動比對 GitHub Releases 的最新版本，發現新版會顯示更新提示，點擊後前往下載頁手動下載安裝——不會無聲自動更新，你的資料由你掌控。</p>
+          <h3>清除快取與重設</h3>
+          <p>設定頁提供「清除快取與重設」功能，可一鍵清除所有資料並還原出廠狀態。</p>
+          <div class="notice notice-warning">
+            <span class="material-symbols-outlined" aria-hidden="true">warning</span>
+            <p><strong>重設無法復原。</strong>執行前請先確認重要的 Prompt 已另行備份（個人版可用匯出功能）。</p>
+          </div>
+          <h3>常見問題</h3>
+          <ul>
+            <li><strong>從 v2.x 升級後看不到舊資料？</strong>v3 首次啟動會把舊明文資料庫備份為 <code>promptbox.db.plain.bak</code> 並建立新的加密資料庫，舊資料不自動遷移，可從備份手動匯入。</li>
+            <li><strong>機密卡片密碼打不開？</strong>先用密碼欄位的 👁️ 顯示切換確認輸入內容與大小寫。密碼錯誤沒有重試上限，但也沒有任何找回機制。</li>
+            <li><strong>IDE 連不上 MCP？</strong>確認伺服器已啟動、Port 與設定 JSON 一致、Token 未被撤銷；收到 429 表示該 Token 超過每分鐘 60 次的速率限制。</li>
+          </ul>
+          <p>還有其他問題？歡迎到 <a href="https://github.com/tsa206531/PromptBox" target="_blank" rel="noopener">GitHub</a> 開 Issue，或來信 <a href="mailto:test1234@google.com">test1234@google.com</a>。</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a class="brand" href="index.html"><span class="logo-mark" aria-hidden="true">📦</span><span>PromptBox</span></a>
+      <ul class="footer-links">
+        <li><a href="download.html">下載</a></li>
+        <li><a href="pricing.html">購買</a></li>
+        <li><a href="docs.html">操作手冊</a></li>
+        <li><a href="changelog.html">更新日誌</a></li>
+        <li><a href="https://github.com/tsa206531/PromptBox" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="mailto:test1234@google.com">聯絡我們</a></li>
+      </ul>
+      <div class="copyright">
+        <span>© 2026 PromptBox. All rights reserved.</span>
+        <span>本地儲存 ・ 加密保護 ・ 你的 Prompt 只屬於你</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
