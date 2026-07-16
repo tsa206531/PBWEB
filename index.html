@@ -41,6 +41,12 @@
         </ul>
       </nav>
       <div class="nav-actions">
+        <button class="nav-icon-btn" type="button" aria-label="切換語言">
+          <span class="material-symbols-outlined">language</span>
+        </button>
+        <a class="nav-icon-btn" href="https://github.com/tsa206531/PromptBox" target="_blank" rel="noopener" aria-label="GitHub 專案頁">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z" clip-rule="evenodd"/></svg>
+        </a>
         <button class="theme-toggle" type="button" aria-label="切換日夜間模式">
           <span class="material-symbols-outlined icon-light">dark_mode</span>
           <span class="material-symbols-outlined icon-dark">light_mode</span>
@@ -76,6 +82,31 @@
         </div>
         <div class="hero-shot reveal">
           <img src="assets/01.jpg" alt="PromptBox 主畫面：左側資料夾樹狀分類，右側 Prompt 卡片牆" width="1280" height="800" loading="eager">
+        </div>
+      </div>
+    </section>
+
+    <!-- 信任列：Hero 之後立刻卸下「可不可信」的焦慮（LIFT 藍圖 step 2） -->
+    <section class="trust-bar">
+      <div class="container trust-bar-inner reveal">
+        <div class="trust-item">
+          <span class="material-symbols-outlined" aria-hidden="true">computer</span>
+          <span>本地儲存<span class="trust-sub"> ・ 離線可用</span></span>
+        </div>
+        <span class="trust-divider" aria-hidden="true"></span>
+        <div class="trust-item">
+          <span class="material-symbols-outlined" aria-hidden="true">lock</span>
+          <span>SQLCipher 靜態加密</span>
+        </div>
+        <span class="trust-divider" aria-hidden="true"></span>
+        <div class="trust-item">
+          <span class="material-symbols-outlined" aria-hidden="true">all_inclusive</span>
+          <span>核心功能永久免費</span>
+        </div>
+        <span class="trust-divider" aria-hidden="true"></span>
+        <div class="trust-item">
+          <span class="material-symbols-outlined" aria-hidden="true">devices</span>
+          <span>Windows ・ macOS</span>
         </div>
       </div>
     </section>
@@ -218,6 +249,99 @@
               <p>對工程、對老闆、對客戶的三種說法樣板，同一件事快速產出三種版本的溝通稿。</p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 安全專區：資料流向（信任型產品必備，焦慮權重最高） -->
+    <section class="section security" id="security">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="overline">Privacy &amp; Security</span>
+          <h2><span class="material-symbols-outlined" aria-hidden="true">shield</span>你的 Prompt，只屬於你</h2>
+          <p>PromptBox 是本地優先（local-first）工具。資料預設留在這台電腦，沒有你的當次授權，機密永遠不會外送。</p>
+        </div>
+
+        <div class="dataflow reveal">
+          <div class="flow-node node-you">
+            <div class="flow-icon"><span class="material-symbols-outlined" aria-hidden="true">computer</span></div>
+            <h4>你的電腦</h4>
+            <p>所有 Prompt 存在本機加密資料庫，離線也能用。</p>
+          </div>
+          <div class="flow-arrow gated" aria-hidden="true">
+            <span class="flow-label">你授權才送</span>
+            <span class="material-symbols-outlined">arrow_forward</span>
+            <span class="flow-label">解一次・餵一次</span>
+          </div>
+          <div class="flow-node node-ai">
+            <div class="flow-icon"><span class="material-symbols-outlined" aria-hidden="true">smart_toy</span></div>
+            <h4>AI 工具</h4>
+            <p>只有你複製或釋放的那份內容，才會進到 ChatGPT / Claude。</p>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">
+            <span class="material-symbols-outlined">block</span>
+          </div>
+          <div class="flow-node node-ai">
+            <div class="flow-icon"><span class="material-symbols-outlined" aria-hidden="true">cloud_off</span></div>
+            <h4>我們的伺服器</h4>
+            <p>沒有雲端帳號、不上傳、不追蹤。我們收不到你的資料。</p>
+          </div>
+        </div>
+
+        <div class="security-points reveal">
+          <div class="security-point">
+            <span class="material-symbols-outlined" aria-hidden="true">enhanced_encryption</span>
+            <div>
+              <h4>雙層加密</h4>
+              <p>整庫 SQLCipher 靜態加密，機密卡片再加一層 AES-256-GCM，金鑰交由 OS Keychain（Windows DPAPI / macOS Keychain）保管。</p>
+            </div>
+          </div>
+          <div class="security-point">
+            <span class="material-symbols-outlined" aria-hidden="true">verified_user</span>
+            <div>
+              <h4>當次授權釋放</h4>
+              <p>機密卡片對 AI 完全隱藏，需要用時解一次、餵一次、不快取，每次釋放都寫入稽核紀錄，全程可追溯。</p>
+            </div>
+          </div>
+          <div class="security-point">
+            <span class="material-symbols-outlined" aria-hidden="true">update</span>
+            <div>
+              <h4>更新由你決定</h4>
+              <p>v3 起採手動更新，偵測到新版只會提示、不會無聲自動安裝，你的資料始終由你掌控。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 首頁 FAQ：正面回應最常見的焦慮（資料外洩 / 免費 / 安裝） -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="overline">FAQ</span>
+          <h2>還在猶豫？先看這幾題</h2>
+        </div>
+        <div class="faq reveal">
+          <details>
+            <summary>我的 Prompt 會被上傳到雲端嗎？</summary>
+            <p>不會。PromptBox 沒有雲端帳號機制，所有資料存在你本機的加密資料庫，離線也能完整使用。只有你主動複製或釋放的內容，才會進到你自己開的 AI 對話視窗。</p>
+          </details>
+          <details>
+            <summary>真的免費嗎？有什麼限制？</summary>
+            <p>核心工作流永久免費：Prompt 管理、資料夾分類、標籤、全局搜尋、一鍵複製、Markdown 預覽、深淺色主題都不用錢（免費版上限 30 條 Prompt、5 個資料夾）。需要無上限與變數樣板等進階功能，再一次性 $9.99 USD 買斷即可，沒有訂閱。</p>
+          </details>
+          <details>
+            <summary>機密卡片安全嗎？AI 會讀到嗎？</summary>
+            <p>機密卡片預設對 AI 完全隱藏，並以獨立密碼做卡片級 AES-256-GCM 加密。沒有你的當次授權，AI 讀不到；每次釋放都會寫入稽核紀錄，可事後追溯。</p>
+          </details>
+          <details>
+            <summary>安裝安全嗎？資料會不會弄丟？</summary>
+            <p>安裝檔全數發布於官方 GitHub Releases，來源公開可查。首次啟動會自動建立加密資料庫並載入「教學資料夾」，讓你在不影響真實資料的前提下先熟悉操作。</p>
+          </details>
+          <details>
+            <summary>支援哪些平台？</summary>
+            <p>目前支援 Windows 10 / 11 與 macOS 10.15（Catalina）以上。Windows 另提供免安裝便攜版，解壓即用。</p>
+          </details>
         </div>
       </div>
     </section>

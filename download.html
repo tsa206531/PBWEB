@@ -40,6 +40,12 @@
         </ul>
       </nav>
       <div class="nav-actions">
+        <button class="nav-icon-btn" type="button" aria-label="切換語言">
+          <span class="material-symbols-outlined">language</span>
+        </button>
+        <a class="nav-icon-btn" href="https://github.com/tsa206531/PromptBox" target="_blank" rel="noopener" aria-label="GitHub 專案頁">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z" clip-rule="evenodd"/></svg>
+        </a>
         <button class="theme-toggle" type="button" aria-label="切換日夜間模式">
           <span class="material-symbols-outlined icon-light">dark_mode</span>
           <span class="material-symbols-outlined icon-dark">light_mode</span>
@@ -69,8 +75,33 @@
       </div>
     </section>
 
+    <!-- 下載安全信任列：正面回應「安裝安不安全」的焦慮 -->
+    <section class="trust-bar">
+      <div class="container trust-bar-inner reveal">
+        <div class="trust-item">
+          <span class="material-symbols-outlined" aria-hidden="true">verified</span>
+          <span>GitHub 官方發布<span class="trust-sub"> ・ 來源可查</span></span>
+        </div>
+        <span class="trust-divider" aria-hidden="true"></span>
+        <div class="trust-item">
+          <span class="material-symbols-outlined" aria-hidden="true">lock</span>
+          <span>首次啟動即加密</span>
+        </div>
+        <span class="trust-divider" aria-hidden="true"></span>
+        <div class="trust-item">
+          <span class="material-symbols-outlined" aria-hidden="true">person_off</span>
+          <span>無需註冊帳號</span>
+        </div>
+        <span class="trust-divider" aria-hidden="true"></span>
+        <div class="trust-item">
+          <span class="material-symbols-outlined" aria-hidden="true">update</span>
+          <span>手動更新，你掌控</span>
+        </div>
+      </div>
+    </section>
+
     <!-- 平台卡片 -->
-    <section class="section" style="padding-top:0">
+    <section class="section" style="padding-top:var(--space-16)">
       <div class="container">
         <div class="dl-platforms">
           <div class="card dl-card reveal" data-platform="win">

@@ -196,7 +196,7 @@ a:hover { color: rgb(var(--color-primary-hover)); }
 }
 .nav-actions { display: flex; align-items: center; gap: var(--space-3); }
 
-.theme-toggle, .nav-burger {
+.theme-toggle, .nav-burger, .nav-icon-btn {
   width: 36px; height: 36px;
   display: inline-flex; align-items: center; justify-content: center;
   background: transparent; border: none; cursor: pointer;
@@ -204,10 +204,11 @@ a:hover { color: rgb(var(--color-primary-hover)); }
   color: rgb(var(--color-text-secondary));
   transition: all var(--duration-fast);
 }
-.theme-toggle:hover, .nav-burger:hover {
+.theme-toggle:hover, .nav-burger:hover, .nav-icon-btn:hover {
   background: rgb(var(--color-text-main) / 0.05);
   color: rgb(var(--color-text-main));
 }
+.nav-icon-btn svg { display: block; width: 20px; height: 20px; }
 .theme-toggle .icon-dark, .dark .theme-toggle .icon-light { display: none; }
 .dark .theme-toggle .icon-dark { display: inline-block; }
 .nav-burger { display: none; }
@@ -660,6 +661,86 @@ kbd {
   border-radius: var(--radius-sm); padding: 1px 5px;
 }
 
+/* ===== Trust Bar（信任列 / 社會證明）=====
+   LIFT 藍圖 step 2：Hero 之後立刻卸下「可不可信」的焦慮 */
+.trust-bar {
+  background: rgb(var(--color-bg-card));
+  border-top: var(--border-w) solid rgb(var(--color-border-light));
+  border-bottom: var(--border-w) solid rgb(var(--color-border-light));
+}
+.trust-bar-inner {
+  display: flex; flex-wrap: wrap;
+  align-items: center; justify-content: center;
+  gap: var(--space-4) var(--space-8);
+  padding: var(--space-5) var(--space-6);
+}
+.trust-item {
+  display: flex; align-items: center; gap: var(--space-2);
+  font-size: var(--text-body); font-weight: 500;
+  color: rgb(var(--color-text-main));
+}
+.trust-item .material-symbols-outlined {
+  font-size: 20px; color: rgb(var(--color-primary));
+}
+.trust-item .trust-sub {
+  font-size: var(--text-caption); font-weight: 400;
+  color: rgb(var(--color-text-secondary));
+}
+.trust-divider { width: 1px; height: 24px; background: rgb(var(--color-border-light)); }
+
+/* ===== Security 專區（資料流向）=====
+   LIFT 焦慮權重最高：主動把「資料留在哪、何時才外送」講清楚 */
+.security { background: rgb(var(--color-bg-card)); border-top: var(--border-w) solid rgb(var(--color-border-light)); }
+.security .section-head h2 { display: inline-flex; align-items: center; gap: var(--space-2); flex-wrap: wrap; justify-content: center; }
+.security .section-head h2 .material-symbols-outlined { color: rgb(var(--color-primary)); font-size: 30px; }
+
+.dataflow {
+  display: grid; grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: stretch; gap: var(--space-3);
+  max-width: 900px; margin: 0 auto var(--space-12);
+}
+.flow-node {
+  background: rgb(var(--color-bg-main));
+  border: var(--border-w) solid rgb(var(--color-border-light));
+  border-radius: var(--radius-xl);
+  padding: var(--space-5); text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: var(--space-2);
+}
+.flow-node.node-you { border-color: rgb(var(--color-primary) / 0.5); }
+.flow-node .flow-icon {
+  width: 48px; height: 48px; border-radius: var(--radius-full);
+  display: flex; align-items: center; justify-content: center;
+  background: rgb(var(--color-primary) / 0.1); color: rgb(var(--color-primary));
+  margin-bottom: var(--space-1);
+}
+.flow-node.node-ai .flow-icon { background: rgb(var(--color-text-main) / 0.06); color: rgb(var(--color-text-secondary)); }
+.flow-node .flow-icon .material-symbols-outlined { font-size: 24px; }
+.flow-node h4 { font-size: 15px; font-weight: 700; }
+.flow-node p { font-size: var(--text-caption); color: rgb(var(--color-text-secondary)); line-height: 1.5; }
+.flow-arrow {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  color: rgb(var(--color-text-secondary));
+}
+.flow-arrow .material-symbols-outlined { font-size: 28px; color: rgb(var(--color-primary)); }
+.flow-arrow .flow-label {
+  font-size: var(--text-micro); font-weight: 700; text-transform: uppercase;
+  letter-spacing: var(--tracking-overline); color: rgb(var(--color-primary));
+  white-space: nowrap;
+}
+.flow-arrow.gated .material-symbols-outlined { color: rgb(var(--color-status-warning)); }
+.dark .flow-arrow.gated .material-symbols-outlined { color: rgb(var(--color-status-warning)); }
+.flow-arrow.gated .flow-label { color: rgb(180 130 10); }
+.dark .flow-arrow.gated .flow-label { color: rgb(var(--color-status-warning)); }
+
+.security-points {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4);
+  max-width: 900px; margin: 0 auto;
+}
+.security-point { display: flex; gap: var(--space-3); align-items: flex-start; }
+.security-point .material-symbols-outlined { color: rgb(var(--color-primary)); flex: none; margin-top: 2px; }
+.security-point h4 { font-size: var(--text-body); font-weight: 700; margin-bottom: 2px; }
+.security-point p { font-size: var(--text-caption); color: rgb(var(--color-text-secondary)); line-height: 1.55; }
+
 /* ===== Scroll fade-in ===== */
 .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
 .reveal.visible { opacity: 1; transform: none; }
@@ -679,6 +760,11 @@ kbd {
   .docs-layout { grid-template-columns: 1fr; gap: var(--space-6); }
   .docs-sidebar { position: static; }
   .dl-platforms { grid-template-columns: 1fr; }
+  /* 資料流向：改成上下堆疊，箭頭轉為向下 */
+  .dataflow { grid-template-columns: 1fr; gap: var(--space-2); max-width: 380px; }
+  .flow-arrow { flex-direction: row; gap: var(--space-2); padding: var(--space-1) 0; }
+  .flow-arrow .material-symbols-outlined { transform: rotate(90deg); }
+  .security-points { grid-template-columns: 1fr; gap: var(--space-5); }
 }
 
 @media (max-width: 720px) {
